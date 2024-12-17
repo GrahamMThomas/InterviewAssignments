@@ -17,6 +17,14 @@ class MemoryDataStore(BaseDataStore):
         self.barcodes = pd.DataFrame()
 
     def save(self, obj) -> None:
+        """Saves supported objects to data store.
+
+        Args:
+            obj (Order | Barcode): Object to save
+
+        Raises:
+            TypeError: If type is not supported
+        """
         # Optimally, these checks should be implemented via constraints in a relational database.
 
         if isinstance(obj, Order):
@@ -68,7 +76,7 @@ class MemoryDataStore(BaseDataStore):
             n (int): Number of top customers to get.
 
         Returns:
-            pd.DataFrame: DataFrame of top n customers.
+            dict: contains dict where key are customerId and value is ticket count.
         """
         merged = pd.merge(
             self.orders.reset_index(), self.barcodes.reset_index(), left_on="order_id", right_on="order_id"

@@ -1,5 +1,9 @@
 # Customer Bar Codes
 
+## UML
+
+![UML](./docs/uml.png)
+
 ## How to run
 
 ### Setup Environment

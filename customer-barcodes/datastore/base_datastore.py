@@ -11,3 +11,6 @@ class BaseDataStore(ABC):
 
     def get_unsold_barcodes(self) -> List[str]:
         pass
+
+    def get_top_customers(self, n: int) -> dict:
+        pass
