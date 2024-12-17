@@ -6,6 +6,7 @@ from ingestion.parsers.parser_factory import ParserFactory
 class FileDataProvider(BaseDataProvider):
     def __init__(self, file_path: str):
         self.file_path = file_path
+        super().__init__()
 
     def get_data(self) -> List[dict]:
         parser_factory = ParserFactory()

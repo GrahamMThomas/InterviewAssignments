@@ -1,7 +1,7 @@
 import sys
 
 
-def create_objects_from_dicts(type_class, dict_list):
+def create_objects_from_dicts(type_class, dict_list) -> object:
     objects = []
     for obj in dict_list:
         try:
